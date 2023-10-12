@@ -1,24 +1,31 @@
 "use client"
 import axios from 'axios'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import Navbar from './components/navbar'
+import MenuDiv from './components/menuDiv'
 
 
 
 export default function Home() {
-  async function axiosCall() {
-   
-      const api_url = 'https://www.jsonkeeper.com/b/MDXW'
-      const result = await axios.get(api_url);
-      console.log(result)
-    
-  }
-  axiosCall()
+
+  const [menuItems, setMenuItems] = useState([])
+
+  // function axiosCall() {
+    useEffect(() => {
+        axios.get('https://www.jsonkeeper.com/b/MDXW').then((response) => {
+          console.log(response)
+          setMenuItems(response.data);
+        }); 
+    },[])
+    console.log(menuItems)
   return (
     <>
+    <div className="container">
       <Navbar/>
+      <MenuDiv menuItems={menuItems} />
+    </div>
     </>
   )
 
