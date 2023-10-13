@@ -9,7 +9,6 @@ import MenuDiv from './components/menuDiv'
 
 
 export default function Home() {
-
   const [menuItems, setMenuItems] = useState([])
 
   // function axiosCall() {
@@ -19,15 +18,21 @@ export default function Home() {
           setMenuItems(response.data);
         }); 
     },[])
-    console.log(menuItems)
-  return (
-    <>
-    <div className="container">
-      <Navbar/>
-      <MenuDiv menuItems={menuItems} />
-    </div>
-    </>
-  )
 
+    console.log(menuItems)
+    
+  return (
+    <div className="container">
+      <Navbar />
+      <MenuDiv menuItems={menuItems} />
+      {menuItems.map((menuItem, index) => (
+        <div key={index}>
+          <h2>{menuItem.title}</h2>
+          <p>{menuItem.description}</p>
+          {/* Render other properties as needed */}
+        </div>
+      ))}
+    </div>
+  );
 }
 
