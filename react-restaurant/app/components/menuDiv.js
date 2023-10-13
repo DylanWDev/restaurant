@@ -4,7 +4,7 @@ function MenuDiv(props) {
   // Filter the menu items to get only the first 6 appetizers
   const appetizers = props.menuItems
     .filter((menuItem) => menuItem.category === "Appetizer")
-    .slice(0, 6);
+    .slice(0, 15);
 
   return (
     <div
