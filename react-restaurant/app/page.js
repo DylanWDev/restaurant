@@ -22,16 +22,12 @@ export default function Home() {
     console.log(menuItems)
     
   return (
-    <div className="container">
+    <div style={{}}>
+    <div className="container ms-5">
       <Navbar />
       <MenuDiv menuItems={menuItems} />
-      {menuItems.map((menuItem, index) => (
-        <div key={index}>
-          <h2>{menuItem.title}</h2>
-          <p>{menuItem.description}</p>
-          {/* Render other properties as needed */}
-        </div>
-      ))}
+      
+    </div>
     </div>
   );
 }
