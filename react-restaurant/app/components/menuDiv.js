@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function MenuDiv(props) {
     console.log(props)
     return (
-        <div id="mainContainDiv" className=' mt-5 border border-primary p-3'>
+        <div id="mainContainDiv" className=' mt-5 border border-secondary p-3'>
             <div>
                 <h1 className='text-center mb-0 p-4 pb-5'>OUR MENU</h1>
             </div>

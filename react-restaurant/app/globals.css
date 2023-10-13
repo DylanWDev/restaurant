@@ -1,5 +1,11 @@
-
+#body {
+  background-color: rgb(214, 214, 214);
+}
 
 #navbar {
-  background-color: #c24747;
+  background-color: white;
+}
+
+#mainContainDiv {
+  background-color: white;
 }
